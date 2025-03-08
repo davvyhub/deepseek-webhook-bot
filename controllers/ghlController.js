@@ -3,7 +3,7 @@ const ghlService = require('../services/ghlService');
 
 exports.handleWebhook = async (req, res) => {
     try {
-        const { message, user } = req.body; // Extract message and user details from GHL
+        const { message, user } = req.body; // Extract message and user details from GHL webhook
 
         if (!message || !user) {
             return res.status(400).json({ error: "Missing message or user data" });
@@ -11,7 +11,7 @@ exports.handleWebhook = async (req, res) => {
 
         console.log(`Received message from ${user.name}: ${message}`);
 
-        // Send message to DeepSeek AI for response
+        // Send message to DeepSeek AI
         const aiResponse = await deepseekController.getDeepSeekResponse(message);
 
         // Send AI response back to GHL

@@ -2,7 +2,7 @@ const axios = require('axios');
 
 exports.sendMessageToGHL = async (userId, message) => {
     try {
-        const ghlWebhookUrl = "https://your-ghl-webhook-url.com/send"; // Replace with actual GHL webhook
+        const ghlWebhookUrl = "https://services.leadconnectorhq.com/hooks/3twxFPtNcicszVrQsCyy/webhook-trigger/23a30530-ddcb-482d-aab2-cf4619057aab"; // Replace with actual GHL webhook
 
         const payload = {
             userId: userId,
